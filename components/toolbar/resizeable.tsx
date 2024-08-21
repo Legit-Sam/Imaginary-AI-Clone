@@ -10,7 +10,7 @@ export default function Resizable() {
   const setImageHeight = useImageStore((state) => state.setImageHeight)
   const setImageWidth = useImageStore((state) => state.setImageWidth)
 
-  const handleDragEnd = (e) => {
+  const handleDragEnd = () => {
     setImageHeight(y.get());
     setImageWidth(x.get());
   }

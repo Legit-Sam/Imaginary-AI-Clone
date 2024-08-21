@@ -24,8 +24,8 @@ const createZustandContext = <TInitial, TStore extends StoreApi<any>>(
   }
 }
 
-// Extend the State type to include height, width, and their respective setters
-type State = {
+// Extending the State type to include height, width, and their respective setters
+interface State {
   tags: string[]
   setTags: (tags: string[]) => void
   activeTag: string
