@@ -24,6 +24,7 @@ const createZustandContext = <TInitial, TStore extends StoreApi<any>>(
   }
 }
 
+// Extend the State type to include height, width, and their respective setters
 type State = {
   tags: string[]
   setTags: (tags: string[]) => void
@@ -33,6 +34,10 @@ type State = {
   setActiveColor: (color: string) => void
   generating: boolean
   setGenerating: (generating: boolean) => void
+  height: number
+  width: number
+  setImageHeight: (height: number) => void
+  setImageWidth: (width: number) => void
 }
 
 const getStore = (initialState: {
@@ -51,6 +56,10 @@ const getStore = (initialState: {
         setActiveColor: (color) => set({ activeColor: color }),
         generating: false,
         setGenerating: (generating) => set({ generating }),
+        height: 0,
+        width: 0,
+        setImageHeight: (height) => set({ height }),
+        setImageWidth: (width) => set({ width }),
       }),
       {
         name: "image-storage",
